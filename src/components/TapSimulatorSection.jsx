@@ -190,7 +190,7 @@ export default function TapSimulatorSection({
                         </a>
                         <a
                           className="nfc-social-link flex items-center justify-center gap-1.5 rounded-xl border border-white/10 bg-white/5 py-2.5 sm:py-3 text-[11px] sm:text-xs font-semibold text-white transition-colors hover:border-[#10B981]/50 hover:text-[#10B981]"
-                          href="https://www.instagram.com/tably.egy?cplk=bXZ6NTNxc3B2bTN0"
+                          href="https://www.instagram.com/taply_egy?rpxt=bXZ6NTNxc3B2bTN0"
                           target="_blank"
                           rel="noopener noreferrer"
                         >

@@ -90,7 +90,7 @@ export default function Footer({t, toggleLanguage, sectionRef, isVisible}) {
               <IconFacebook className="w-5 h-5" />
             </a>
             <a
-              href="https://www.instagram.com/tably.egy?cplk=bXZ6NTNxc3B2bTN0"
+              href="https://www.instagram.com/taply_egy?rpxt=bXZ6NTNxc3B2bTN0"
               target="_blank"
               rel="noopener noreferrer"
               className="w-11 h-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-[#F8F6F0] hover:text-[#10B981] hover:border-[#10B981]/40 hover:scale-110 transition-all"
