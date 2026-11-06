@@ -199,6 +199,7 @@ export default function HeroSection({t, lang, whatsappUrl, qrImageUrl}) {
             >
               {/* FRONT SIDE */}
               <div
+                dir="ltr"
                 className="absolute inset-0 w-full h-full rounded-2xl bg-linear-to-br from-gray-900 via-[#0B0C10] to-black p-3 min-[375px]:p-4 sm:p-7 flex flex-col justify-between overflow-hidden border border-emerald-500/30"
                 style={{backfaceVisibility: "hidden"}}
               >
@@ -216,7 +217,7 @@ export default function HeroSection({t, lang, whatsappUrl, qrImageUrl}) {
                   </div>
                 </div>
 
-                <div className="my-auto py-2 relative z-10 space-y-1">
+                <div className="my-auto py-2 relative z-10 space-y-1 text-center">
                   <div className="text-xl min-[375px]:text-2xl sm:text-3xl font-sans font-black tracking-wide sm:tracking-widest text-white group-hover:text-emerald-300 transition-colors leading-tight">
                     TAPLY PRIVÉ
                   </div>
@@ -238,6 +239,7 @@ export default function HeroSection({t, lang, whatsappUrl, qrImageUrl}) {
 
               {/* BACK SIDE */}
               <div
+                dir="ltr"
                 className="absolute inset-0 w-full h-full rounded-2xl bg-linear-to-br from-black via-[#0D0F15] to-gray-900 p-3 min-[375px]:p-4 sm:p-7 flex flex-col justify-between overflow-hidden border border-emerald-500/30"
                 style={{
                   backfaceVisibility: "hidden",
@@ -276,7 +278,10 @@ export default function HeroSection({t, lang, whatsappUrl, qrImageUrl}) {
                     </span>
                   </a>
 
-                  <div className="min-w-0 flex-1 text-center space-y-1 sm:space-y-1.5">
+                  <div
+                    dir={lang === "ar" ? "rtl" : "ltr"}
+                    className="min-w-0 flex-1 text-center space-y-1 sm:space-y-1.5"
+                  >
                     <div className="text-xs sm:text-sm font-black tracking-wide sm:tracking-wider text-white font-sans">
                       TAPLY
                     </div>
@@ -290,6 +295,7 @@ export default function HeroSection({t, lang, whatsappUrl, qrImageUrl}) {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
+                      dir="ltr"
                       className="text-[9px] sm:text-[10px] font-mono text-[#10B981] hover:underline inline-flex items-center justify-center gap-1.5 pt-1 font-bold"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse"></span>

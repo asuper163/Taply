@@ -7,7 +7,13 @@ import {
   IconGlobe,
 } from "../constants";
 
-export default function Footer({t, toggleLanguage, sectionRef, isVisible}) {
+export default function Footer({
+  t,
+  lang,
+  toggleLanguage,
+  sectionRef,
+  isVisible,
+}) {
   return (
     <>
       {/* HOW TO ORDER SECTION */}
@@ -33,7 +39,7 @@ export default function Footer({t, toggleLanguage, sectionRef, isVisible}) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             <div className="min-w-0 bg-[#0B0C10] p-5 sm:p-6 lg:p-8 rounded-3xl border border-white/10 hover:border-[#10B981]/40 transition-all hover:-translate-y-2">
               <div className="text-3xl sm:text-4xl font-sans font-black text-[#10B981] mb-4">
-                01
+                {lang === "ar" ? "١" : "01"}
               </div>
               <h3 className="font-serif text-lg sm:text-xl font-bold mb-2 text-white">
                 {t.howItWorks.s1}
@@ -45,7 +51,7 @@ export default function Footer({t, toggleLanguage, sectionRef, isVisible}) {
 
             <div className="min-w-0 bg-[#0B0C10] p-5 sm:p-6 lg:p-8 rounded-3xl border border-white/10 hover:border-[#10B981]/40 transition-all hover:-translate-y-2">
               <div className="text-3xl sm:text-4xl font-sans font-black text-[#10B981] mb-4">
-                02
+                {lang === "ar" ? "٢" : "02"}
               </div>
               <h3 className="font-serif text-lg sm:text-xl font-bold mb-2 text-white">
                 {t.howItWorks.s2}
@@ -57,7 +63,7 @@ export default function Footer({t, toggleLanguage, sectionRef, isVisible}) {
 
             <div className="min-w-0 bg-[#0B0C10] p-5 sm:p-6 lg:p-8 rounded-3xl border border-white/10 hover:border-[#10B981]/40 transition-all hover:-translate-y-2">
               <div className="text-3xl sm:text-4xl font-sans font-black text-[#10B981] mb-4">
-                03
+                {lang === "ar" ? "٣" : "03"}
               </div>
               <h3 className="font-serif text-lg sm:text-xl font-bold mb-2 text-white">
                 {t.howItWorks.s3}
@@ -107,10 +113,27 @@ export default function Footer({t, toggleLanguage, sectionRef, isVisible}) {
             </a>
           </div>
 
-          <div className="w-full pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-[10px] sm:text-xs text-[#9CA3AF] font-mono gap-4">
-            <div>{t.footer.rights}</div>
+          <div
+            dir="ltr"
+            className="w-full pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-[10px] sm:text-xs text-[#9CA3AF] font-mono gap-4"
+          >
+            {lang === "ar" ? (
+              <div
+                dir="rtl"
+                className="flex flex-wrap items-center justify-center gap-x-1.5"
+              >
+                <span>جميع الحقوق محفوظة</span>
+                <bdi dir="ltr">© ٢٠٢٦</bdi>
+                <bdi dir="ltr">TAPLY NFC</bdi>
+                <span>مصر</span>
+              </div>
+            ) : (
+              <div>{t.footer.rights}</div>
+            )}
             <div className="flex items-center gap-6">
-              <span>CAIRO • ALEXANDRIA • GIZA</span>
+              <span dir={lang === "ar" ? "rtl" : "ltr"}>
+                {lang === "ar" ? "القاهرة  • الجيزة" : "CAIRO  • GIZA"}
+              </span>
               <button
                 onClick={toggleLanguage}
                 className="text-[#10B981] underline flex items-center gap-1"

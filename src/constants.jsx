@@ -179,7 +179,7 @@ export const TaplyLogoSvg = ({className = "h-8 sm:h-9", compact = false}) => (
     </div>
     <svg
       className={`${compact ? "h-3.5" : "h-5 sm:h-6"} w-auto`}
-      viewBox="0 0 270 50"
+      viewBox="0 0 200 50"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -316,11 +316,11 @@ export const translations = {
     howItWorks: {
       badge: "SIMPLE ORDER PROCESS",
       title: "How to Order via WhatsApp",
-      s1: "1. Choose Your Finish",
+      s1: "Choose Your Finish",
       s1D: "Select between Matte Black Steel, Mint Emerald Metal, Obsidian, or Custom Printed PVC.",
-      s2: "2. Send Us Details via WhatsApp",
+      s2: "Send Us Details via WhatsApp",
       s2D: "Share your logo, name, title, and links directly on WhatsApp. We draft your proof.",
-      s3: "3. 48-Hour Delivery Across Egypt",
+      s3: "48-Hour Delivery Across Egypt",
       s3D: "Receive your pre-programmed TAPLY card at your doorstep anywhere in Egypt.",
     },
     footer: {
@@ -384,11 +384,11 @@ export const translations = {
     howItWorks: {
       badge: "٣ خطوات بسيطة للطلب",
       title: "كيفية طلب بطاقتك الخاصة",
-      s1: "١. اختر نوع البطاقة",
+      s1: "اختر نوع البطاقة",
       s1D: "اختر بين الأسود المطفي الفاخر، الزمرد الأخضر الملكي، أو بطاقات الـ PVC المطبوعة.",
-      s2: "٢. أرسل تفاصيلك عبر الواتساب",
+      s2: "أرسل تفاصيلك عبر الواتساب",
       s2D: "أرسل شعارك واسمك وروبطك مباشرة على الواتساب لنقوم بتجهيز المعاينة الحية.",
-      s3: "٣. توصيل سريع خلال ٤٨ ساعة",
+      s3: "توصيل سريع خلال ٤٨ ساعة",
       s3D: "استلم بطاقتك الجاهزة والمبرمجة عند باب بيتك في جميع محافظات مصر.",
     },
     footer: {

@@ -68,7 +68,7 @@ export default function TapSimulatorSection({
               }}
               onClick={handleNfcTap}
             >
-              <div className="absolute inset-0 w-full h-full rounded-2xl bg-linear-to-br from-gray-900 via-[#0B0C10] to-black p-3 sm:p-5 lg:p-7 flex flex-col justify-between overflow-hidden border border-emerald-500/30 shadow-2xl shadow-emerald-950/65">
+              <div dir="ltr" className="absolute inset-0 w-full h-full rounded-2xl bg-linear-to-br from-gray-900 via-[#0B0C10] to-black p-3 sm:p-5 lg:p-7 flex flex-col justify-between overflow-hidden border border-emerald-500/30 shadow-2xl shadow-emerald-950/65">
                 <div className="absolute inset-0 pointer-events-none opacity-40 bg-[radial-gradient(circle_at_50%_50%,rgba(52,211,153,0.18)_0%,transparent_65%)]"></div>
                 <div className="flex items-center justify-between relative z-10">
                   <TaplyLogoSvg compact className="h-5" />
@@ -77,7 +77,7 @@ export default function TapSimulatorSection({
                   </div>
                 </div>
 
-                <div className="my-auto py-2 relative z-10 space-y-1">
+                <div className="my-auto py-2 relative z-10 space-y-1 text-center">
                   <div className="text-base sm:text-2xl lg:text-3xl font-sans font-black tracking-wide sm:tracking-widest text-white group-hover:text-emerald-300 transition-colors leading-tight">
                     TAPLY PRIVÉ
                   </div>

@@ -12,21 +12,26 @@ const useSmoothScrollReveal = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    if (!ref.current) return;
+    const updateVisibility = () => {
+      if (!ref.current) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      {threshold: 0.1},
-    );
+      const rect = ref.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const isInView =
+        rect.top <= windowHeight * 0.85 &&
+        rect.bottom >= windowHeight * 0.15;
 
-    observer.observe(ref.current);
+      setIsVisible((current) => (current === isInView ? current : isInView));
+    };
 
-    return () => observer.disconnect();
+    window.addEventListener("scroll", updateVisibility, {passive: true});
+    window.addEventListener("resize", updateVisibility);
+    updateVisibility();
+
+    return () => {
+      window.removeEventListener("scroll", updateVisibility);
+      window.removeEventListener("resize", updateVisibility);
+    };
   }, []);
 
   return [ref, isVisible];
@@ -90,7 +95,7 @@ export default function App() {
       </a>
 
       {/* HEADER COMPONENT */}
-      <Header t={t} toggleLanguage={toggleLanguage} />
+      <Header t={t} lang={lang} toggleLanguage={toggleLanguage} />
 
       {/* MAIN CONTENT */}
       <main className="flex-1">
@@ -119,6 +124,7 @@ export default function App() {
       {/* FOOTER & HOW-IT-WORKS COMPONENT */}
       <Footer
         t={t}
+        lang={lang}
         toggleLanguage={toggleLanguage}
         sectionRef={howSectionRef}
         isVisible={isHowVisible}

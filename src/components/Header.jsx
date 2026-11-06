@@ -6,17 +6,23 @@ import {
   IconX,
 } from "../constants";
 
-export default function Header({t, toggleLanguage}) {
+export default function Header({t, lang, toggleLanguage}) {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-40 backdrop-blur-xl bg-[#050608]/85 border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+      <div
+        dir="ltr"
+        className="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between"
+      >
         <a href="#" className="flex items-center gap-3">
           <TaplyLogoSvg />
         </a>
 
-        <nav className="hidden lg:flex items-center gap-5 xl:gap-8 text-sm text-[#9CA3AF] font-medium">
+        <nav
+          dir={lang === "ar" ? "rtl" : "ltr"}
+          className="hidden lg:flex items-center gap-5 xl:gap-8 text-sm text-[#9CA3AF] font-medium"
+        >
           <a
             href="#nfc-explained"
             className="hover:text-[#10B981] transition-colors"
