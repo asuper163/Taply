@@ -116,61 +116,61 @@ export default function HeroSection({t, lang, whatsappUrl, qrImageUrl}) {
   }, []);
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center py-20 px-6 overflow-hidden">
+    <section className="relative min-h-[calc(100svh-4rem)] lg:min-h-[90vh] flex items-center justify-center py-12 sm:py-16 lg:py-20 px-4 sm:px-6 overflow-hidden">
       <canvas
         ref={canvasRef}
         className="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-80"
       />
 
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-        <div className="lg:col-span-7 space-y-6 text-center lg:text-left ltr:lg:text-left rtl:lg:text-right">
+      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center relative z-10">
+        <div className="lg:col-span-7 min-w-0 space-y-5 sm:space-y-6 text-center lg:text-left ltr:lg:text-left rtl:lg:text-right">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#10B981]/10 border border-[#10B981]/30 text-[#10B981] text-xs font-mono tracking-wider">
             <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
             {t.hero.badge}
           </div>
 
-          <h1 className="font-serif text-4xl sm:text-6xl xl:text-7xl font-bold leading-tight tracking-tight text-white">
+          <h1 className="font-serif text-3xl min-[375px]:text-4xl sm:text-6xl xl:text-7xl font-bold leading-tight tracking-tight text-white">
             {t.hero.title} <br />
             <span className="bg-linear-to-r from-white via-emerald-300 to-emerald-500 bg-clip-text text-transparent">
               {t.hero.titleHighlight}
             </span>
           </h1>
 
-          <p className="text-[#9CA3AF] text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
+          <p className="text-[#9CA3AF] text-sm sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
             {t.subhead}
           </p>
 
-          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2 sm:pt-4">
             <a
               href="#nfc-explained"
-              className="px-8 py-4 rounded-xl border border-white/20 hover:border-[#10B981]/50 bg-white/5 text-white font-semibold text-sm transition-all hover:bg-[#10B981]/10"
+              className="px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl border border-white/20 hover:border-[#10B981]/50 bg-white/5 text-white font-semibold text-sm transition-all hover:bg-[#10B981]/10"
             >
               {t.hero.ctaSecondary}
             </a>
           </div>
 
-          <div className="pt-8 border-t border-white/10 grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0">
-            <div>
-              <div className="font-serif text-2xl font-bold text-[#10B981]">
+          <div className="pt-6 sm:pt-8 border-t border-white/10 grid grid-cols-3 gap-2 sm:gap-4 max-w-md mx-auto lg:mx-0">
+            <div className="min-w-0">
+              <div className="font-serif text-xl sm:text-2xl font-bold text-[#10B981]">
                 {t.hero.stats1}
               </div>
-              <div className="text-[11px] text-[#9CA3AF] font-mono">
+              <div className="text-[10px] sm:text-[11px] leading-snug text-[#9CA3AF] font-mono">
                 {t.hero.stats1Label}
               </div>
             </div>
-            <div>
-              <div className="font-serif text-2xl font-bold text-[#10B981]">
+            <div className="min-w-0">
+              <div className="font-serif text-xl sm:text-2xl font-bold text-[#10B981]">
                 {t.hero.stats2}
               </div>
-              <div className="text-[11px] text-[#9CA3AF] font-mono">
+              <div className="text-[10px] sm:text-[11px] leading-snug text-[#9CA3AF] font-mono">
                 {t.hero.stats2Label}
               </div>
             </div>
-            <div>
-              <div className="font-serif text-2xl font-bold text-[#10B981]">
+            <div className="min-w-0">
+              <div className="font-serif text-xl sm:text-2xl font-bold text-[#10B981]">
                 {t.hero.stats3}
               </div>
-              <div className="text-[11px] text-[#9CA3AF] font-mono">
+              <div className="text-[10px] sm:text-[11px] leading-snug text-[#9CA3AF] font-mono">
                 {t.hero.stats3Label}
               </div>
             </div>
@@ -178,7 +178,7 @@ export default function HeroSection({t, lang, whatsappUrl, qrImageUrl}) {
         </div>
 
         {/* 3D MOUSE-TILT & ENHANCED FLIP CARD MOCKUP */}
-        <div className="lg:col-span-5 flex flex-col items-center justify-center perspective-distant">
+        <div className="lg:col-span-5 w-full flex flex-col items-center justify-center perspective-distant">
           <div
             ref={cardRef}
             onClick={toggleCardFlip}
@@ -199,7 +199,7 @@ export default function HeroSection({t, lang, whatsappUrl, qrImageUrl}) {
             >
               {/* FRONT SIDE */}
               <div
-                className="absolute inset-0 w-full h-full rounded-2xl bg-linear-to-br from-gray-900 via-[#0B0C10] to-black p-5 sm:p-7 flex flex-col justify-between overflow-hidden border border-emerald-500/30"
+                className="absolute inset-0 w-full h-full rounded-2xl bg-linear-to-br from-gray-900 via-[#0B0C10] to-black p-3 min-[375px]:p-4 sm:p-7 flex flex-col justify-between overflow-hidden border border-emerald-500/30"
                 style={{backfaceVisibility: "hidden"}}
               >
                 <div
@@ -210,27 +210,22 @@ export default function HeroSection({t, lang, whatsappUrl, qrImageUrl}) {
                 ></div>
 
                 <div className="flex items-center justify-between relative z-10">
-                  <TaplyLogoSvg className="h-6" />
-                  <div className="flex items-center gap-2">
-                    <span className="text-[9px] font-mono text-[#10B981] px-2 py-0.5 rounded border border-[#10B981]/40 bg-[#10B981]/10">
-                      NTAG216
-                    </span>
-                    <div className="w-7 h-7 rounded-full bg-[#10B981]/10 flex items-center justify-center border border-[#10B981]/40">
-                      <IconWifi className="w-3.5 h-3.5 text-[#10B981] animate-pulse" />
-                    </div>
+                  <TaplyLogoSvg compact className="h-5" />
+                  <div className="w-7 h-7 rounded-full bg-[#10B981]/10 flex items-center justify-center border border-[#10B981]/40">
+                    <IconWifi className="w-3.5 h-3.5 text-[#10B981] animate-pulse" />
                   </div>
                 </div>
 
                 <div className="my-auto py-2 relative z-10 space-y-1">
-                  <div className="text-2xl sm:text-3xl font-sans font-black tracking-widest text-white group-hover:text-emerald-300 transition-colors leading-tight">
+                  <div className="text-xl min-[375px]:text-2xl sm:text-3xl font-sans font-black tracking-wide sm:tracking-widest text-white group-hover:text-emerald-300 transition-colors leading-tight">
                     TAPLY PRIVÉ
                   </div>
-                  <div className="text-[10px] sm:text-xs text-[#10B981] tracking-[0.25em] font-mono uppercase font-semibold">
+                  <div className="text-[8px] min-[375px]:text-[9px] sm:text-xs tracking-[0.15em] sm:tracking-[0.25em] text-[#10B981] font-mono uppercase font-semibold">
                     LUXURY NFC IDENTITY CARD
                   </div>
                 </div>
 
-                <div className="flex justify-between items-end border-t border-white/10 pt-3 text-[10px] font-mono text-gray-400 tracking-wider relative z-10">
+                <div className="flex justify-between items-end gap-2 border-t border-white/10 pt-2 sm:pt-3 text-[8px] sm:text-[10px] font-mono text-gray-400 tracking-wide sm:tracking-wider relative z-10">
                   <div className="flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-ping"></span>
                     CAIRO • EGYPT
@@ -243,7 +238,7 @@ export default function HeroSection({t, lang, whatsappUrl, qrImageUrl}) {
 
               {/* BACK SIDE */}
               <div
-                className="absolute inset-0 w-full h-full rounded-2xl bg-linear-to-brrom-black via-[#0D0F15] to-gray-900 p-5 sm:p-7 flex flex-col justify-between overflow-hidden border border-emerald-500/30"
+                className="absolute inset-0 w-full h-full rounded-2xl bg-linear-to-br from-black via-[#0D0F15] to-gray-900 p-3 min-[375px]:p-4 sm:p-7 flex flex-col justify-between overflow-hidden border border-emerald-500/30"
                 style={{
                   backfaceVisibility: "hidden",
                   transform: "rotateY(180deg)",
@@ -257,13 +252,13 @@ export default function HeroSection({t, lang, whatsappUrl, qrImageUrl}) {
                 ></div>
 
                 <div className="flex items-center justify-between relative z-10">
-                  <TaplyLogoSvg className="h-5 sm:h-6" />
+                  <TaplyLogoSvg compact className="h-5" />
                   <span className="text-[9px] font-mono text-[#10B981] px-2 py-0.5 rounded border border-[#10B981]/30 bg-[#10B981]/10 uppercase tracking-widest font-bold">
                     WHATSAPP SCAN
                   </span>
                 </div>
 
-                <div className="flex items-center justify-between gap-4 my-auto relative z-10">
+                <div className="flex items-center justify-between gap-2 sm:gap-4 my-auto relative z-10">
                   <a
                     href={whatsappUrl}
                     target="_blank"
@@ -274,21 +269,18 @@ export default function HeroSection({t, lang, whatsappUrl, qrImageUrl}) {
                     <img
                       src={qrImageUrl}
                       alt="WhatsApp QR Code"
-                      className="rounded-md w-23.75 h-23.75 sm:w-26.25 sm:h-26.25 block bg-white"
+                      className="rounded-md w-18 h-18 sm:w-23.75 sm:h-23.75 block bg-white"
                     />
                     <span className="text-[7px] font-mono text-black mt-1 font-black tracking-wider">
                       SCAN TO CHAT
                     </span>
                   </a>
 
-                  <div className="flex-1 text-right ltr:text-right rtl:text-left space-y-1.5">
-                    <div className="text-sm font-black tracking-wider text-white font-sans flex items-center justify-end gap-1">
-                      TAPLY{" "}
-                      <span className="text-[#10B981] font-mono text-[10px] font-normal">
-                        NTAG216
-                      </span>
+                  <div className="min-w-0 flex-1 text-center space-y-1 sm:space-y-1.5">
+                    <div className="text-xs sm:text-sm font-black tracking-wide sm:tracking-wider text-white font-sans">
+                      TAPLY
                     </div>
-                    <p className="text-[10px] sm:text-[11px] text-gray-300 leading-relaxed font-light">
+                    <p className="text-[9px] sm:text-[11px] text-gray-300 leading-relaxed font-light">
                       {lang === "ar"
                         ? "امسح الكود بالكاميرا لفتح محادثة الواتساب المباشرة لطلب بطاقتك."
                         : "Scan QR code with your camera to open instant WhatsApp chat and order."}
@@ -298,7 +290,7 @@ export default function HeroSection({t, lang, whatsappUrl, qrImageUrl}) {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="text-[10px] font-mono text-[#10B981] hover:underline inline-flex items-center justify-end gap-1.5 pt-1 font-bold"
+                      className="text-[9px] sm:text-[10px] font-mono text-[#10B981] hover:underline inline-flex items-center justify-center gap-1.5 pt-1 font-bold"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse"></span>
                       +20 106 119 8548
@@ -306,7 +298,7 @@ export default function HeroSection({t, lang, whatsappUrl, qrImageUrl}) {
                   </div>
                 </div>
 
-                <div className="flex justify-between items-center border-t border-white/10 pt-2 text-[10px] font-mono text-gray-400">
+                <div className="flex justify-between items-center gap-2 border-t border-white/10 pt-2 text-[8px] sm:text-[10px] font-mono text-gray-400">
                   <span className="tracking-widest text-[#10B981]/90 font-bold">
                     TAPLY EGYPT
                   </span>

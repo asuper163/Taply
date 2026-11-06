@@ -12,25 +12,21 @@ const useSmoothScrollReveal = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (!ref.current) return;
-      const rect = ref.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
+    if (!ref.current) return;
 
-      if (
-        rect.top <= windowHeight * 0.85 &&
-        rect.bottom >= windowHeight * 0.15
-      ) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      {threshold: 0.1},
+    );
 
-    window.addEventListener("scroll", handleScroll, {passive: true});
-    handleScroll();
+    observer.observe(ref.current);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => observer.disconnect();
   }, []);
 
   return [ref, isVisible];
@@ -86,11 +82,11 @@ export default function App() {
         target="_blank"
         rel="noopener noreferrer"
         onClick={playClickSound}
-        className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-linear-to-tr from-emerald-600 via-emerald-500 to-teal-400 text-white flex items-center justify-center shadow-2xl shadow-emerald-900/80 hover:scale-110 active:scale-95 transition-all group border-2 border-emerald-300/60"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-linear-to-tr from-emerald-600 via-emerald-500 to-teal-400 text-white flex items-center justify-center shadow-2xl shadow-emerald-900/80 hover:scale-110 active:scale-95 transition-all group border-2 border-emerald-300/60"
         title="Contact us directly on WhatsApp"
       >
         <span className="absolute -inset-1.5 rounded-full bg-emerald-500/40 animate-ping pointer-events-none"></span>
-        <IconMessageCircle className="w-8 h-8 group-hover:rotate-12 transition-transform" />
+        <IconMessageCircle className="w-6 h-6 sm:w-8 sm:h-8 group-hover:rotate-12 transition-transform" />
       </a>
 
       {/* HEADER COMPONENT */}

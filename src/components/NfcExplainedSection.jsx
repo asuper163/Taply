@@ -11,14 +11,14 @@ export default function NfcExplainedSection({t, sectionRef, isVisible}) {
     <section
       id="nfc-explained"
       ref={sectionRef}
-      className={`py-24 px-6 bg-[#0B0C10] border-y border-white/10 relative overflow-hidden transition-all duration-700 ease-out transform ${
+      className={`py-14 sm:py-20 lg:py-24 px-4 sm:px-6 bg-[#0B0C10] border-y border-white/10 relative overflow-hidden transition-all duration-700 ease-out transform ${
         isVisible
           ? "opacity-100 translate-y-0 scale-100"
           : "opacity-0 translate-y-16 scale-95"
       }`}
     >
       <div className="max-w-7xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14 lg:mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#10B981]/10 border border-[#10B981]/30 text-[#10B981] text-xs font-mono tracking-wider mb-4">
             <IconShieldCheck className="w-4 h-4" />
             {t.nfcExplained.badge}
@@ -31,13 +31,13 @@ export default function NfcExplainedSection({t, sectionRef, isVisible}) {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-[#050608] p-8 rounded-3xl border border-white/10 hover:border-[#10B981]/40 transition-all flex flex-col justify-between group hover:-translate-y-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+          <div className="min-w-0 bg-[#050608] p-5 sm:p-6 lg:p-8 rounded-3xl border border-white/10 hover:border-[#10B981]/40 transition-all flex flex-col justify-between group hover:-translate-y-2">
             <div>
-              <div className="w-14 h-14 rounded-2xl bg-[#10B981]/10 border border-[#10B981]/30 flex items-center justify-center mb-6 text-[#10B981] group-hover:scale-110 transition-transform">
-                <IconSmartphone className="w-7 h-7" />
+              <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-[#10B981]/10 border border-[#10B981]/30 flex items-center justify-center mb-4 sm:mb-6 text-[#10B981] group-hover:scale-110 transition-transform">
+                <IconSmartphone className="w-5.5 h-5.5 sm:w-7 sm:h-7" />
               </div>
-              <h3 className="font-serif text-xl font-bold mb-3 text-white">
+              <h3 className="font-serif text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white">
                 {t.nfcExplained.p1Title}
               </h3>
               <p className="text-gray-400 text-sm leading-relaxed">
@@ -46,12 +46,12 @@ export default function NfcExplainedSection({t, sectionRef, isVisible}) {
             </div>
           </div>
 
-          <div className="bg-[#050608] p-8 rounded-3xl border border-white/10 hover:border-[#10B981]/40 transition-all flex flex-col justify-between group hover:-translate-y-2">
+          <div className="min-w-0 bg-[#050608] p-5 sm:p-6 lg:p-8 rounded-3xl border border-white/10 hover:border-[#10B981]/40 transition-all flex flex-col justify-between group hover:-translate-y-2">
             <div>
-              <div className="w-14 h-14 rounded-2xl bg-[#10B981]/10 border border-[#10B981]/30 flex items-center justify-center mb-6 text-[#10B981] group-hover:scale-110 transition-transform">
-                <IconZap className="w-7 h-7" />
+              <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-[#10B981]/10 border border-[#10B981]/30 flex items-center justify-center mb-4 sm:mb-6 text-[#10B981] group-hover:scale-110 transition-transform">
+                <IconZap className="w-5.5 h-5.5 sm:w-7 sm:h-7" />
               </div>
-              <h3 className="font-serif text-xl font-bold mb-3 text-white">
+              <h3 className="font-serif text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white">
                 {t.nfcExplained.p2Title}
               </h3>
               <p className="text-gray-400 text-sm leading-relaxed">
@@ -60,12 +60,12 @@ export default function NfcExplainedSection({t, sectionRef, isVisible}) {
             </div>
           </div>
 
-          <div className="bg-[#050608] p-8 rounded-3xl border border-white/10 hover:border-[#10B981]/40 transition-all flex flex-col justify-between group hover:-translate-y-2">
+          <div className="min-w-0 bg-[#050608] p-5 sm:p-6 lg:p-8 rounded-3xl border border-white/10 hover:border-[#10B981]/40 transition-all flex flex-col justify-between group hover:-translate-y-2">
             <div>
-              <div className="w-14 h-14 rounded-2xl bg-[#10B981]/10 border border-[#10B981]/30 flex items-center justify-center mb-6 text-[#10B981] group-hover:scale-110 transition-transform">
-                <IconRefresh className="w-7 h-7" />
+              <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-[#10B981]/10 border border-[#10B981]/30 flex items-center justify-center mb-4 sm:mb-6 text-[#10B981] group-hover:scale-110 transition-transform">
+                <IconRefresh className="w-5.5 h-5.5 sm:w-7 sm:h-7" />
               </div>
-              <h3 className="font-serif text-xl font-bold mb-3 text-white">
+              <h3 className="font-serif text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white">
                 {t.nfcExplained.p3Title}
               </h3>
               <p className="text-gray-400 text-sm leading-relaxed">
