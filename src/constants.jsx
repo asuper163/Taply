@@ -167,7 +167,10 @@ export const IconLinkedIn = ({className = "w-5 h-5"}) => (
 
 // TAPLY Brand Logo Component
 export const TaplyLogoSvg = ({className = "h-8 sm:h-9", compact = false}) => (
-  <div className={`flex items-center gap-2 select-none ${className}`}>
+  <div
+    dir="ltr"
+    className={`flex flex-row items-center gap-2 select-none ${className}`}
+  >
     <div
       className={`${compact ? "w-5 h-5" : "w-7 h-7 sm:w-8 sm:h-8"} rounded-lg bg-linear-to-tr from-emerald-600 via-emerald-500 to-teal-400 p-[1.5px] shadow-md shadow-emerald-950/60 flex items-center justify-center shrink-0`}
     >

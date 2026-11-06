@@ -79,7 +79,7 @@ export default function Footer({
       {/* FOOTER */}
       <footer className="bg-[#030407] border-t border-white/10 py-12 sm:py-16 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
-          <div className="mb-4">
+          <div dir="ltr" className="mb-4">
             <TaplyLogoSvg />
           </div>
           <p className="text-[#9CA3AF] text-sm max-w-md mb-8">
